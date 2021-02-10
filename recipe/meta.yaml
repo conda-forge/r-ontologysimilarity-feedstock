@@ -1,4 +1,4 @@
-{% set version = "2.3" %}
+{% set version = "2.4" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ontologySimilarity_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ontologySimilarity/ontologySimilarity_{{ version }}.tar.gz
-  sha256: 7cabd41b4611426d43262e7f05a27f49a811397ffbea8d1fb95da03ce46503e6
+  sha256: 8911eff39fcc412de1324eaf7b611786f8917e0eb7050888ccf516c4800bf396
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -32,12 +32,12 @@ requirements:
     - {{ posix }}zip               # [win]
   host:
     - r-base
-    - r-rcpp >=0.11.2
+    - r-rcpp >=1.0.0
     - r-ontologyindex >=2.0
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
-    - r-rcpp >=0.11.2
+    - r-rcpp >=1.0.0
     - r-ontologyindex >=2.0
 
 test:
@@ -47,13 +47,11 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=ontologySimilarity
-  license: GPL (>= 2)
-  summary: Functions for calculating semantic similarities between ontological terms or sets
-    of ontological terms based on term information content and assessing statistical
-    significance of similarity in the context of a collection of sets of ontological
-    terms.
+  license: GPL-2.0-or-later
+  summary: Functions for calculating semantic similarities between ontological terms or sets of ontological terms based on term information content and assessing statistical significance of similarity in the context of a collection of sets of ontological terms.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
