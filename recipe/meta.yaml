@@ -1,4 +1,4 @@
-{% set version = "2.4" %}
+{% set version = "2.5" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ontologySimilarity_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ontologySimilarity/ontologySimilarity_{{ version }}.tar.gz
-  sha256: 8911eff39fcc412de1324eaf7b611786f8917e0eb7050888ccf516c4800bf396
+  sha256: abab69b23473a4861bda23ffde106f60be19727c8842c052b6cce945c529bf0c
 
 build:
   merge_build_host: true  # [win]
