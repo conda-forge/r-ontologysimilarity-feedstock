@@ -1,4 +1,4 @@
-{% set version = "2.7" %}
+{% set version = "2.9" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ontologySimilarity_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ontologySimilarity/ontologySimilarity_{{ version }}.tar.gz
-  sha256: 57b273087d65501ea45ea8beb5bf169f69f2fd6f60dde2381ceaf68dbb51cf0d
+  sha256: f8ece7b71f5b3a5d0d2b37010584d1884391983fdd4430dee3256c96cd0ca080
 
 build:
-  number: 2
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
